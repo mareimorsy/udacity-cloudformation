@@ -1,1 +1,2 @@
-aws cloudformation update-stack --stack-name $1 --template-body file://$2  --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1
+aws cloudformation package --template-file main.yml --s3-bucket webapp-cloudformation-aio > out.yaml
+aws cloudformation update-stack --stack-name ha-webaap-aio --template-body file://out.yaml  --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1

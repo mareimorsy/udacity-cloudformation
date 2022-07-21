@@ -2,19 +2,27 @@
 Welcome to Udacity cloud devops second project!
 
 ## Project diagram
-![Project diagram](diagram.png)
+![Project diagram](images/00-diagram.png)
 
 ## To run the project for the first time
 ```
-$ ./create.sh ha-webapp final-project.yml final-project-parameters.json
+$ ./create.sh
 ```
 
-## To run the project for next times
+## To update the project for the next times after creation
 ```
-$ ./update.sh ha-webapp final-project.yml final-project-parameters.json
+$ ./update.sh
 ```
 
 ## To delete the stack
 ```
-$ ./delete.sh ha-webapp
+$ ./delete.sh
 ```
+
+## Screenshots
+![Project diagram](images/00-diagram.png)
+![Network Stack In progress](images/01-network_stack.png)
+![Network Stack Compleated](images/02-network_stack_completed.png)
+![Server Stack In progress](images/03-server_stack.png)
+![ALB DNS Output](images/04-alb-dns-output.png)
+![Web app is up and running](images/05-web_app_works.png)

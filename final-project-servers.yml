@@ -33,6 +33,28 @@ Parameters:
         Description: The maximum size of instances in AutoScaling Group
         Type: String
         Default: 8
+        
+    # Dependencies
+    VPC:
+        Type: String
+    VPCPublicRouteTable:
+        Type: String
+    VPCPrivateRouteTable1:
+        Type: String
+    VPCPrivateRouteTable2:
+        Type: String
+    PublicSubnets:
+        Type: String
+    PrivateSubnets:
+        Type: String
+    PublicSubnet1:
+        Type: String
+    PublicSubnet2:
+        Type: String
+    PrivateSubnet1:
+        Type: String
+    PrivateSubnet2:
+        Type: String
 
 Resources:
 

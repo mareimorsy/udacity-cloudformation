@@ -1,8 +1,9 @@
 Resources:
+
   NetworkStack:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
-      TemplateURL: file://final-project-network.yml
+      TemplateURL: final-project-network.yml
       Parameters: 
         EnvironmentName : "HAWebApp"
         VpcCIDR: "10.0.0.0/16"
@@ -10,21 +11,26 @@ Resources:
         PublicSubnet2CIDR: "10.0.1.0/24"
         PrivateSubnet1CIDR: "10.0.2.0/24"
         PrivateSubnet2CIDR: "10.0.3.0/24"
+
   ServerStack:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
-      TemplateURL: file://final-project-servers.yml
+      TemplateURL: final-project-servers.yml
       Parameters: 
         EnvironmentName : "HAWebApp"
-        ASGMinSize: "1"
+        ASGMinSize: "4"
         ASGMaxSize: "8"
         EC2ImageId: "ami-0729e439b6769d6ab"
-        EC2InstanceType: "t2.micro"
+        EC2InstanceType: "t3.medium"
         EBSVolumeSize: "10"
-
-        # EnvironmentName : "HAWebApp"
-        # ASGMinSize: "4"
-        # ASGMaxSize: "8"
-        # EC2ImageId: "ami-0729e439b6769d6ab"
-        # EC2InstanceType: "t3.medium"
-        # EBSVolumeSize: "10"
+        # Dependencies
+        VPC: !GetAtt NetworkStack.Outputs.VPC
+        VPCPublicRouteTable: !GetAtt NetworkStack.Outputs.VPCPublicRouteTable
+        VPCPrivateRouteTable1: !GetAtt NetworkStack.Outputs.VPCPrivateRouteTable1
+        VPCPrivateRouteTable2: !GetAtt NetworkStack.Outputs.VPCPrivateRouteTable2
+        PublicSubnets: !GetAtt NetworkStack.Outputs.PublicSubnets
+        PrivateSubnets: !GetAtt NetworkStack.Outputs.PrivateSubnets
+        PublicSubnet1: !GetAtt NetworkStack.Outputs.PublicSubnet1
+        PublicSubnet2: !GetAtt NetworkStack.Outputs.PublicSubnet2
+        PrivateSubnet1: !GetAtt NetworkStack.Outputs.PrivateSubnet1
+        PrivateSubnet2: !GetAtt NetworkStack.Outputs.PrivateSubnet2

@@ -1,0 +1,30 @@
+Resources:
+  NetworkStack:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: file://final-project-network.yml
+      Parameters: 
+        EnvironmentName : "HAWebApp"
+        VpcCIDR: "10.0.0.0/16"
+        PublicSubnet1CIDR: "10.0.0.0/24"
+        PublicSubnet2CIDR: "10.0.1.0/24"
+        PrivateSubnet1CIDR: "10.0.2.0/24"
+        PrivateSubnet2CIDR: "10.0.3.0/24"
+  ServerStack:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: file://final-project-servers.yml
+      Parameters: 
+        EnvironmentName : "HAWebApp"
+        ASGMinSize: "1"
+        ASGMaxSize: "8"
+        EC2ImageId: "ami-0729e439b6769d6ab"
+        EC2InstanceType: "t2.micro"
+        EBSVolumeSize: "10"
+
+        # EnvironmentName : "HAWebApp"
+        # ASGMinSize: "4"
+        # ASGMaxSize: "8"
+        # EC2ImageId: "ami-0729e439b6769d6ab"
+        # EC2InstanceType: "t3.medium"
+        # EBSVolumeSize: "10"

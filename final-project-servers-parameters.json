@@ -1,0 +1,26 @@
+[
+	{
+		"ParameterKey": "EnvironmentName",
+		"ParameterValue": "HAWebApp"
+	},
+	{
+		"ParameterKey": "ASGMinSize",
+		"ParameterValue": "4"
+	},
+	{
+		"ParameterKey": "ASGMaxSize",
+		"ParameterValue": "8"
+	},
+	{
+		"ParameterKey": "EC2ImageId",
+		"ParameterValue": "ami-0729e439b6769d6ab"
+	},
+	{
+		"ParameterKey": "EC2InstanceType",
+		"ParameterValue": "t3.medium"
+	},
+	{
+		"ParameterKey": "EBSVolumeSize",
+		"ParameterValue": "10"
+	}
+]

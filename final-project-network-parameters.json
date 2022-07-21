@@ -22,29 +22,5 @@
 	{
 		"ParameterKey": "PrivateSubnet2CIDR",
 		"ParameterValue": "10.0.3.0/24"
-	},
-	{
-		"ParameterKey": "ASGMinSize",
-		"ParameterValue": "4"
-	},
-	{
-		"ParameterKey": "ASGMaxSize",
-		"ParameterValue": "8"
-	},
-	{
-		"ParameterKey": "SSHKeyName",
-		"ParameterValue": "hawebapp_keypair"
-	},
-	{
-		"ParameterKey": "EC2ImageId",
-		"ParameterValue": "ami-0729e439b6769d6ab"
-	},
-	{
-		"ParameterKey": "EC2InstanceType",
-		"ParameterValue": "t3.medium"
-	},
-	{
-		"ParameterKey": "EBSVolumeSize",
-		"ParameterValue": "10"
 	}
 ]

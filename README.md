@@ -20,7 +20,6 @@ $ ./delete.sh
 ```
 
 ## Screenshots
-![Project diagram](images/00-diagram.png)
 ![Network Stack In progress](images/01-network_stack.png)
 ![Network Stack Compleated](images/02-network_stack_completed.png)
 ![Server Stack In progress](images/03-server_stack.png)
